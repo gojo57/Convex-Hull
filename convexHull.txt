@@ -1,0 +1,10 @@
+Convex Hull
+--> If we stretch a rubber band around some points in a plane and leave it then the rubber band will take the shape of a polygon with minimum area such that all the points lie inside the polygon. The polygon is called convex hull of the points.
+--> The topmost right and the bottommost left points are always part of the convex hull.
+
+Construction
+--> We sort the points according to the x coordinates and if the x coordinates are same then we sort according to the y coordinates.
+--> We draw a line from the leftmost point to the rightmost point and the points above this line are the upper part of the convex hull and the points below the line are the lower part of the convex hull.
+--> Now we have two sets, upper and lower convex hulls.
+--> Now, if we consider 3 points P1, P2 and P3. If we join P1, P2 then P2, P3 and we see that after joining P2, P3 the original line takes a left turn then point P2 won't be considered in our convex hull as it is not the outermost point (we can go from P1 to P3 directly). We will keep on removing the points which are not the outermost points.
+--> Final convex hull = points of upper convex hull + points of lower convex hull.
